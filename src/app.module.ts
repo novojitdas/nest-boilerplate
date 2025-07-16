@@ -6,8 +6,7 @@ import dbConfig from './config/db.config';
 // Controller Service Entity Module
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Testuser } from './testEntity/testuser.entity';
-import { TestUsersModule } from './testEntity/testuser.module';
+
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { User } from './user/user.entity';
@@ -26,7 +25,7 @@ import { User } from './user/user.entity';
         const db = configService.get('db');
         return {
           ...db,
-          entities: [Testuser, User], // Can also use autoLoadEntities: true if using feature modules
+          entities: [User], // Can also use autoLoadEntities: true if using feature modules
         };
       },
     }),
